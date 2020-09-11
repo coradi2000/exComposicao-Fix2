@@ -77,8 +77,13 @@ public class Order {
 		sb.append("Client: " + client.getName() + " (" + client.getBirthDate() + " - ");
 		sb.append(client.getEmail() + "\n");
 		sb.append("Order items: \n");
-		
-		
+		for (OrderItem orderItems : orderItem) {
+			sb.append(orderItems.getProduct().getName() +", $" + 
+					String.format("%.2f", orderItems.getPrice()) +
+					", Quantity: " + orderItems.getQuantity() + 
+					", Subtotal: $  " + String.format("%.2f", orderItems.subTotal(orderItems.getQuantity(), orderItems.getPrice())) + "\n");
+		}
+		sb.append(total());
 		return sb.toString();
 	}
 }

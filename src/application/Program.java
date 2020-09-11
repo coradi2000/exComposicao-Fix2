@@ -25,8 +25,8 @@ public class Program {
 		String name = sc.nextLine();
 		System.out.print("E-mail: ");
 		String email = sc.nextLine();
-		System.out.println("Birth Date (DD/MM/YYYY): ");
-		Date birthDate = sdf.parse(sc.next());
+		System.out.print("Birth Date (DD/MM/YYYY): ");
+		Date birthDate = sdf.parse(sc.nextLine());
 		System.out.println("Enter order data :");
 		System.out.print("Status: ");
 		String status = sc.nextLine();
@@ -39,7 +39,7 @@ public class Program {
 		for (int i=1; i<=items ; i++) {
 			System.out.println("Enter #" + i + " item data: ");
 			System.out.print("Product name: ");
-			String productName = sc.nextLine();
+			String productName = sc.next();
 			System.out.print("Product price: ");
 			double productPrice = sc.nextDouble();
 			System.out.print("Quantity: ");
@@ -50,7 +50,7 @@ public class Program {
 		}
 		
 		System.out.println();
-		System.out.println("ORDER SUMMARY:");
+		System.out.println(order.toString());
 		System.out.println();
 		
 		sc.close();
