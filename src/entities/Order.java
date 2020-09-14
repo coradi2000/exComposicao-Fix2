@@ -74,7 +74,7 @@ public class Order {
 		sb.append("ORDER SUMMARY: \n");
 		sb.append("Order moment: " + sdf.format(moment) + "\n");
 		sb.append("Order status " + status + "\n");
-		sb.append("Client: " + client.getName() + " (" + client.getBirthDate() + " - ");
+		sb.append("Client: " + client.getName() + " (" + client.getBirthDate() + ") - ");
 		sb.append(client.getEmail() + "\n");
 		sb.append("Order items: \n");
 		for (OrderItem orderItems : orderItem) {
@@ -83,7 +83,7 @@ public class Order {
 					", Quantity: " + orderItems.getQuantity() + 
 					", Subtotal: $  " + String.format("%.2f", orderItems.subTotal(orderItems.getQuantity(), orderItems.getPrice())) + "\n");
 		}
-		sb.append(total());
+		sb.append("Total price: $" + String.format("%.2f", total()));
 		return sb.toString();
 	}
 }
